@@ -1,0 +1,23 @@
+.restaurant h2 {
+    text-align: center;
+}
+
+.resdetails p {
+    text-align: center;
+}
+
+.resdetails img {
+    display: block;
+    margin: auto;
+    width: 60%;
+}
+
+.twitter-tweet {
+    width: 80%;
+    margin: auto;
+}
+
+#map { 
+    width: 100%; 
+    height: 100%; 
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Where can I eat!</title>
+    <link rel="icon" type="image/png" href="/images/icon.png"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/lstyle.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkxMyUdBwaVz1W07nsn5j7ke6QVGr8N38&libraries=places"></script>
+
+</head>
+<body class="container">
+    <header>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1 class="display-3">Where can I eat!</h1>
+        </div>
+        <div class="row">
+            <div class="container-fluid">
+                    <h5>Please select a location on the map</h5>
+                    <div id="locform">
+                        <form id="map-search-form">
+                            <input type="text" class="form-control" name="lat" readonly="yes"><br>
+                            <input type="text" class="form-control" name="lon" readonly="yes"><br>
+                            You can enter a cuisine type here, and well try focus on restaurants that fit that cuisine! (eg. 'Chinese')<br>
+                            <input type="text" class="form-control" name="cuisine"><br>
+                            <input class="btn btn-default" type="submit" value="Find Food!">
+                        </form>
+                        
+                    </div>
+                    <br>
+                    <input id="psinput" type="text" class="form-control" placeholder="Search Map">
+                    <div id="map"></div>
+                    <br><br>
+                    
+            </div>
+        </div>
+    </main>
+    
+    <script type="text/javascript" src="/scripts/maps.js"></script>
+</body>
+</html>

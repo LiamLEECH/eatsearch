@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Where can I eat!</title>
+    <link rel="icon" type="image/png" href="/images/icon.png"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/lstyle.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    
+    <style>
+        body {padding-top:50px;}
+    </style>
+</head>
+<body class="container">
+    <header>
+    </header>
+
+    <main>
+            <div class="jumbotron">
+                <h1 class="display-3">Where can I eat!</h1>
+            </div>
+            <div>
+                <% result.restaurants.forEach(function(r) { %>
+                    <div class="restaurant">
+                        <h2><%= r.restaurant.name %></h2>
+                        <div class="resdetails">
+                            <p><a href="<%= r.restaurant.location.gmaps %>"><%= r.restaurant.location.address %></a></p>
+                            <img src="<%= r.restaurant.featured_image %>" >
+                            <p>
+                                Zomato User Rating: <%= r.restaurant.user_rating.rating_text %>
+                            </p>
+                            <p>
+                                <i>Cuisine: <%= r.restaurant.cuisines %></i>
+                            </p>
+                            <div class="tweets">
+                                <% if (r.tweets.length === 0) { %>
+                                    <p> No tweets found.. </p>
+                                <% } %> 
+                                <% r.tweets.forEach(function(t) { %>
+                                    <%- t.emb.html %>
+                                <% }); %>
+                            </div>
+                        </div>
+                    </div>
+                    <br><hr>
+                <% }); %>
+            </div>
+    </main>
+
+</body>
+</html>
